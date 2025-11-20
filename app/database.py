@@ -1,12 +1,17 @@
+
+
 from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 import os
-
+from dotenv import load_dotenv
+load_dotenv()
 # Database connection string
 # Format: postgresql://username@localhost/database_name
-# Replace YOUR_USERNAME with the output from 'whoami' command
-SQLALCHEMY_DATABASE_URL = "postgresql://bhavana@localhost/expense_tracker"
+SQLALCHEMY_DATABASE_URL = os.getenv(
+    "DATABASE_URL",
+    "postgresql://bhavana@localhost/expense_tracker"  # Fallback for local dev
+)
 
 # Create database engine - manages connections
 engine = create_engine(SQLALCHEMY_DATABASE_URL)
