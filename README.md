@@ -8,7 +8,7 @@ A REST API for personal expense tracking built with FastAPI and PostgreSQL, feat
 
 ## 📌 Overview
 
-This project is a production-ready backend API that allows users to:
+This project is a backend API that allows users to:
 - Track income and expenses with categories
 - View spending analytics and monthly summaries
 - Manage their financial data securely with JWT authentication
